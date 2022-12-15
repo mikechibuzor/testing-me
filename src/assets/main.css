@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------- GLOBAL STYLES -------- */
+@layer base {
+  body{
+    @apply font-dosis text-base font-normal;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    @apply w-2 h-1.5 bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-xl bg-gray-400;
+  }
+}
+
+
+@layer components {
+  .pad-container {
+    @apply px-4 md:px-8 lg:px-10 xl:px-28 2xl:px-48;
+  }
+}
