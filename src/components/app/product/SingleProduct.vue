@@ -44,7 +44,7 @@
 
 <script setup>
 import { cart } from "@/store/cart.js";
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import Swal from "sweetalert2";
 
 const props = defineProps({
@@ -108,9 +108,6 @@ const removeProductFromCart = (id) => {
 };
 // add 2.2% to price
 const computePrice = (price) => ((2.2 / 100) * price + price).toFixed(2);
-
-// lifecycle
-onMounted(() => console.log(computeWidth.value));
 </script>
 
 <style scoped>
