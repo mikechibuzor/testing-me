@@ -1,7 +1,7 @@
 <template>
-  <main class="bg-primary min-h-screen">
+  <main class="bg-primary">
     <the-header />
-    <router-view />
+    <router-view class="min-h-screen" />
   </main>
 </template>
 

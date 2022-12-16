@@ -17,7 +17,7 @@
         {{ props.productDetails.description }}
       </p>
       <p class="text-gray-300 mb-5 tracking-widest font-bold">
-        ${{ props.productDetails.price }}
+        ${{ computePrice(props.productDetails.price) }}
       </p>
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-x-2">
@@ -99,6 +99,7 @@ const removeProductFromCart = (id) => {
     showConfirmButton: false,
   });
 };
+const computePrice = (price) => ((2.2 / 100) * price + price).toFixed(2);
 </script>
 
 <style scoped>
