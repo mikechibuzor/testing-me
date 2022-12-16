@@ -1,7 +1,7 @@
 <template>
   <main class="bg-primary">
     <the-header />
-    <router-view class="min-h-screen" />
+    <router-view class="min-h-screen bg-primary overflow-x-hidden" />
   </main>
 </template>
 

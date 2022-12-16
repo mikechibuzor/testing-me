@@ -44,7 +44,7 @@
 
 <script setup>
 import { cart } from "@/store/cart.js";
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import Swal from "sweetalert2";
 
 const props = defineProps({
@@ -59,6 +59,12 @@ const cartStore = cart();
 
 // computed
 const cartItems = computed(() => cartStore.cartItems);
+const computeWidth = computed(() => {
+  if (document.documentElement.clientWidth > 780) {
+    return "25%";
+  }
+  return "90%";
+});
 
 // methods
 const addProductToCart = (product) => {
@@ -71,6 +77,7 @@ const addProductToCart = (product) => {
       allowOutsideClick: true,
       background: "#121212",
       iconColor: "rgba(145, 12, 12, .99)",
+      width: computeWidth.value,
     });
     return;
   }
@@ -99,7 +106,11 @@ const removeProductFromCart = (id) => {
     showConfirmButton: false,
   });
 };
+// add 2.2% to price
 const computePrice = (price) => ((2.2 / 100) * price + price).toFixed(2);
+
+// lifecycle
+onMounted(() => console.log(computeWidth.value));
 </script>
 
 <style scoped>

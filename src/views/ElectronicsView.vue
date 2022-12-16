@@ -50,6 +50,7 @@ const getProducts = async () => {
 // lifecycle hooks
 onMounted(async () => {
   await getProducts();
+  console.log(document.documentElement.clientWidth);
 });
 </script>
 
